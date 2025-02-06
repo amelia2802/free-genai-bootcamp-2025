@@ -1,0 +1,94 @@
+<example>
+    <user:input>
+        "We know what we are, but not what we may be."
+    </user:input>
+
+    <score>10</score>
+
+    <score_reasons>
+    - GOOD: In the vocabulary table it correctly shows the bengali characters for the words
+    - GOOD: Start showing the vocabulary table and sentence structure right away
+    - GOOD: The sentence structure is conceptual and not a direct translation
+    - GOOD: Clues are helpful and don't give away the answer
+    </score_reasons>
+
+    <assistant:output>
+    ### **Vocabulary Table**  
+
+    | Bengali  | Pronunciation | English  |  
+    |----------|--------------|----------|  
+    | আমরা  | **amra**  | We  |  
+    | জানা  | **jana**  | Know  |  
+    | কী  | **ki**  | What  |  
+    | হওয়া  | **hôwa**  | Be  |  
+    | কিন্তু  | **kintu**  | But  |  
+    | না  | **na**  | Not  |  
+    | হতে  | **hôte**  | May (be)  |  
+
+    ---
+
+    ### **Possible Sentence Structure**  
+
+    - **[Subject] [Verb] [Object].**  
+    - **[Conjunction] [Negation] [Object] [Possibility].**  
+
+    ---
+
+    ### **Clues and Considerations**  
+
+    - Start with **"We know" → "আমরা জানি"** (**amra jani**)  
+    - "What we are" requires you to structure **"we"** + **"are"** into a phrase  
+    - **"But not"** is directly translatable as **"কিন্তু না"** (**kintu na**)  
+    - **"What we may be"** uses the verb **"হওয়া"** (**hôwa**) in a possible form  
+
+    ---
+
+    ### **Your Turn!**  
+    Try translating based on the hints! I'll check your attempt and give feedback. 🚀
+    </assistant:output>
+</example>
+
+<example>
+    <user:input>
+        Bears are at the door, did you leave the garbage out?
+    </user:input>
+    <score>4/score>
+    <score_reasons>
+    - BAD: The vocabulary table doesn't show all the bengali characters for the words
+    - BAD: The sentence structure is too direct and not conceptual
+    - BAD: The clues are too direct and give away the answer
+    </score_reasons>
+    <assistant:output>
+    ### **Vocabulary Table**  
+
+    | Bengali  | Pronunciation | English  |  
+    |----------|--------------|----------|  
+    | ভাল্লুক  | **bhalluk**  | Bear  |  
+    | দরজা  | **dorja**  | Door  |  
+    | থাকা  | **thaka**  | To be (exist)  |  
+    | রাখা  | **rakha**  | To leave (something)  |  
+    | আবর্জনা  | **aborjona**  | Garbage  |  
+    | বাইরে  | **baire**  | Outside  |  
+
+    ---
+
+    ### **Possible Sentence Structure**  
+
+    - **[Subject] [Verb] [Location].**  
+    - **[Verb] [Object] [Location]?**  
+
+    ---
+
+    ### **Clues and Considerations**  
+
+    - "Bears are at the door" → Use **ভাল্লুক** (**bhalluk**) and **দরজা** (**dorja**)  
+    - "Are at" → Think of **"being"** or **"existing"** in a place  
+    - "Did you leave the garbage out?" → Use **রাখা** (**rakha**) for "leave"  
+    - "Out" → Consider **বাইরে** (**baire**)  
+
+    ---
+
+    ### **Your Turn!**  
+    Try translating based on these hints, and I’ll give feedback! 🚀
+    </assistant:output>
+</example>
