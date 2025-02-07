@@ -1,0 +1,57 @@
+<example>
+    <user:input>
+        “Trespassers will be prosecuted.”
+    </user:input>
+
+    <score>8</score>
+
+    <score_reasons>
+    - GOOD: Start showing the vocabulary table and sentence structure right away
+    - GOOD: The sentence structure is conceptual and not a direct translation
+    - GOOD: Clues are helpful,informative and don't give away the answer
+    - BAD: The pronounciations are wrong for some of the words, it's better to add some gap betwwn two words
+    </score_reasons>
+
+    <assistant:output>
+        Vocabulary Table
+        Bengali	Pronunciation	English
+        অনুপ্রবেশকারী	onuprobeshkari	Trespasser
+        আইনত বিচার	aintobichar	Prosecute
+        হবে	hobey	Will be
+        Sentence Structure
+        [Subject] [Verb] [Object].
+        Clues and Considerations
+        The sentence is a warning, so it's likely to be in the imperative or future tense.
+        The verb "will be prosecuted" is in the passive voice, which may affect the word order in Bengali.
+        Think about how to express the idea of "prosecution" in Bengali, considering the vocabulary provided.
+        Consider the use of particles in Bengali to indicate the relationship between the subject and the verb.
+    </assistant:output>
+</example>
+
+<example>
+    <user:input>
+        The raven is in the garden, and it is looking at the flowers.
+    </user:input>
+    <score>10</score>
+    <score_reasons>
+    - GOOD: The sentence structure is conceptual and not a direct translation
+    - GOOD: The clues are helpful,informative and don't give away the answer
+    - GOOD: The pronounciations are correct for all the words
+    </score_reasons>
+    <assistant:output>
+        Vocabulary Table
+        Bengali	Pronunciation	English
+        কাক	kak	Raven
+        বাগান	bagan	Garden
+        ফুল	ful	Flower
+        তাকাচ্ছে	takachchhe	Looking
+        Sentence Structure
+        [Location] [Subject] [Verb], [Object] [Verb].
+        Clues and Considerations
+        Think about how to express the idea of "it" in Bengali, considering the subject-verb agreement.
+        Consider the use of particles in Bengali to indicate the relationship between the location and the subject.
+        The verb "is looking" is in the present continuous tense, which may affect the verb conjugation in Bengali.
+        Think about how to connect the two clauses in Bengali using a conjunction.
+        Try translating based on these hints, and I’ll give feedback! 🚀
+    </assistant:output>
+</example>
