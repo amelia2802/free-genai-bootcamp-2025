@@ -6,7 +6,7 @@
     <score>10</score>
 
     <score_reasons>
-    - GOOD: In the vocabulary table it correctly shows the bengali characters for the words
+    - GOOD: In the vocabulary table it correctly shows the bengali characters for the words,no repeated words
     - GOOD: Start showing the vocabulary table and sentence structure right away
     - GOOD: The sentence structure is conceptual and not a direct translation
     - GOOD: Clues are helpful and don't give away the answer
@@ -52,10 +52,10 @@
     <user:input>
         Bears are at the door, did you leave the garbage out?
     </user:input>
-    <score>4/score>
+    <score>4</score>
     <score_reasons>
     - BAD: The vocabulary table doesn't show all the bengali characters for the words
-    - BAD: The sentence structure is too direct and not conceptual
+    - BAD: The sentence structure is lacking assurance
     - BAD: The clues are too direct and give away the answer
     </score_reasons>
     <assistant:output>
