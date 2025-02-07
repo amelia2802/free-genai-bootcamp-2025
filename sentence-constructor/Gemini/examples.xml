@@ -1,0 +1,46 @@
+<example>
+    <user:input>
+        "All the world’s a stage, and all the men and women merely players."
+    </user:input>
+
+    <score>10</score>
+
+    <score_reasons>
+    - GOOD: Start showing the vocabulary table and sentence structure right away
+    - GOOD: The sentence structure is correct
+    - GOOD: Clues are helpful,informative and don't give away the answer
+    - GOOD: Suggests alternavive sentence phrasing
+    </score_reasons>
+
+    <assistant:output>
+        Here's your Bengali translation challenge!
+
+        ## Vocabulary Table
+
+        | Bengali | Pronunciation | English |
+        |---|---|---|
+        | বিশ্ব | bishsho | world |
+        | মঞ্চ | moncho | stage |
+        | পুরুষ | purush | men |
+        | নারী | nari | women |
+        | খেলোয়াড় | kheloar | player |
+
+
+        ## Sentence Structure
+
+        [World] [Stage] [be], [men] [women] [merely] [player] [be].
+
+        ## Clues and Considerations
+
+        *   Bengali often uses a Subject-Object-Verb (SOV) sentence structure.  Consider how this might differ from English.
+        *   "All" can be tricky. Think about how you might express "all" in the context of the world and also the men and women.  There are a few ways to approach this.
+        *   The verb "to be" is important here.  Think about the present tense form.
+        *   "Merely" can be expressed in a few ways.  Think about words that imply "just" or "only".
+        *   Remember that the vocabulary table provides the dictionary form of the words. You'll likely need to make adjustments for tense, case, and number.
+        *   Consider the appropriate particles to connect the different parts of the sentence.  These are crucial for correct grammar.
+        *   Think about how you might combine "men and women."  Is there a more concise way than listing both?
+        *   The sentence has two distinct parts.  How might you link them together?  Consider conjunctions.
+        *   Remember that "a" before "stage" and "player" is implied in Bengali and doesn't need a direct translation.
+
+    </assistant:output>
+</example>
