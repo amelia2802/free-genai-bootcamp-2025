@@ -1,0 +1,47 @@
+<example>
+    <user:input>
+        "Genius is one percent inspiration and ninety-nine percent perspiration."
+    </user:input>
+
+    <score>10</score>
+
+    <score_reasons>
+    - GOOD: Start showing the vocabulary table and sentence structure right away
+    - GOOD: The sentence structure is correct
+    - GOOD: Clues are helpful,informative and don't give away the answer
+    - GOOD: Suggests alternavive sentence phrasing
+    </score_reasons>
+
+    <assistant:output>
+            ### Vocabulary Table
+
+    | Bengali        | Pronunciation      | English         |
+    |----------------|--------------------|-----------------|
+    | প্রতিভা        | Protibha           | Genius          |
+    | এক             | Ek                 | One             |
+    | শতাংশ         | Shôtôngsho         | Percent         |
+    | অনুপ্রেরণা     | Onuprerona         | Inspiration     |
+    | নিরানব্বই     | Niranbbôi          | Ninety-nine     |
+    | পরিশ্রম        | Porishrom          | Perspiration    |
+
+    ---
+
+    ### Sentence Structure
+
+    ```
+    [Subject] [Number] [Percent] [Noun], [Number] [Percent] [Noun].
+    ```
+
+    ---
+
+    ### Clues and Considerations
+
+    - The sentence is a general statement, so no specific tense is required.
+    - The word "and" is used to connect two parts of the sentence. In Bengali, it is typically translated as "এবং" (ebông) or just a comma (,) depending on the context.
+    - The structure is straightforward: [Subject] [Quantity] [Attribute], [Quantity] [Attribute].
+    - Think about how to express percentages in Bengali. The word "শতাংশ" (Shôtôngsho) is used for "percent."
+    - Consider the order of words in Bengali, which often follows a Subject-Object-Verb (SOV) pattern, but in this case, it’s more about listing attributes.
+
+    Let me know if you need more hints!
+    </assistant:output>
+</example>
