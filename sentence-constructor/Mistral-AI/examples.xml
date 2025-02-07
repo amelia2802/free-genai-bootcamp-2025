@@ -1,0 +1,47 @@
+<example>
+    <user:input>
+        "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends."
+    </user:input>
+
+    <score>9</score>
+
+    <score_reasons>
+    - GOOD: Start showing the vocabulary table and sentence structure right away
+    - GOOD: The sentence structure is conceptual and not a direct translation
+    - GOOD: Clues are helpful,informative and don't give away the answer
+    - GOOD: Suggests alternavive sentence phrasing
+    - BAD: The pronounciations are not exactly correct for all the words 
+    </score_reasons>
+
+    <assistant:output>
+        # Vocabulary Table
+
+        | Bengali | Pronounciation | English |
+        | --- | --- | --- |
+        | সাহস | shaash | bravery |
+        | শত্রু | shotru | enemy |
+        | বন্ধু | bondhu | friend |
+        | নেওয়া | neoa | take |
+        | প্রয়োজন | proyojon | need |
+        | মুখোমুখি | mukhomukhi | face |
+        | তবে | tobe | but |
+        | একই | ekoi | same |
+
+        # Sentence Structure
+
+        [Subject] [Verb] [Object] [Verb] [Object], [Conjunction] [Adverb] [Verb] [Object] [Verb] [Object].
+
+        # Clues and Considerations
+
+        - The sentence is in the present tense.
+        - The subject is implied and not explicitly stated in Bengali.
+        - The verb "takes" is in the third person singular form.
+        - The phrase "a great deal of" can be translated as "অনেক" (onek).
+        - The phrase "to stand up to" can be translated as "মুখোমুখি হওয়া" (mukhomukhi hoya).
+        - The phrase "our enemies" can be translated as "আমাদের শত্রুদের" (amader shotruder).
+        - The phrase "our friends" can be translated as "আমাদের বন্ধুদের" (amader bondhuder).
+        - The phrase "just as much" can be translated as "একই পরিমাণ" (ekoi poriman).
+        - The phrase "it takes" can be translated as "এর জন্য প্রয়োজন" (er jonno proyojon).
+        - The phrase "to face" can be translated as "মুখোমুখি হতে" (mukhomukhi hote).
+    </assistant:output>
+</example>
