@@ -17,7 +17,7 @@ A language learning school wants to build a prototype of learning portal which w
 - Everything will be treated as Single user.
 
 ## Database Schema
-
+Our database will be single sqlite database called `words.db` that will be in the root of the project folder of `backend-java`.
 We have the following tables:
 - words - stores vocabulary words
     - id integer
@@ -50,32 +50,321 @@ We have the following tables:
 
 ### API Endpoints
 
-- GET /dashboard/last_study_session
-- GET /dashboard/study_progress
-- GET /dashboard/quick-stats
-- GET /api/study_activities/:id
-- GET /api/study_activities/:id/study_sessions
-- GET /words
-- GET /words/:id
-- GET /groups
-- GET /groups/:id
-- GET /groups/:id/words
-- POST /api/study_activities
+#### GET /dashboard/last_study_session
+
+```{
+  "id": 1,
+  "group_id": 1,
+  "study_activity_id": 1,
+  "created_at": "2025-02-13T12:00:00Z",
+  "words": [
+    {
+      "word_id": 1,
+      "bengali": "শব্দ",
+      "pronounciation": "shobdo",
+      "english": "word",
+      "parts": {}
+    }
+  ]
+}
+```
+
+#### GET /dashboard/study_progress
+
+```{
+  "total_sessions": 10,
+  "total_words_reviewed": 100,
+  "correct_reviews": 80,
+  "incorrect_reviews": 20
+}
+```
+
+#### GET /dashboard/quick-stats
+
+```{
+  "total_words": 500,
+  "total_groups": 20,
+  "total_study_sessions": 15
+}
+```
+#### GET /api/study_activities/:id
+
+```{
+  "id": 1,
+  "study_session_id": 1,
+  "group_id": 1,
+  "created_at": "2025-02-13T12:00:00Z"
+}
+```
+#### GET /api/study_activities/:id/study_sessions
+
+```{
+  "study_sessions": [
+    {
+      "id": 1,
+      "group_id": 1,
+      "study_activity_id": 1,
+      "created_at": "2025-02-13T12:00:00Z"
+    }
+  ]
+}
+```
+#### GET /words
+
+```
+  {
+  "words": [
+    {
+      "id": 1,
+      "bengali": "শব্দ",
+      "pronounciation": "shobdo",
+      "english": "word",
+      "parts": {}
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "items_per_page": 100
+  }
+}
+```
+#### GET /words/:id
+
+```{
+  "id": 1,
+  "bengali": "শব্দ",
+  "pronounciation": "shobdo",
+  "english": "word",
+  "parts": {}
+}
+```
+#### GET /groups
+
+```{
+  "groups": [
+    {
+      "id": 1,
+      "name": "Basic Vocabulary"
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 1,
+    "items_per_page": 100
+  }
+}
+```
+#### GET /groups/:id
+
+```{
+  "id": 1,
+  "name": "Basic Vocabulary"
+}
+```
+#### GET /groups/:id/words
+
+```{
+  "words": [
+    {
+      "id": 1,
+      "bengali": "শব্দ",
+      "pronounciation": "shobdo",
+      "english": "word",
+      "parts": {}
+    }
+  ],
+}
+```
+#### POST /api/study_activities
     - required params: group_id, study_activity_id
-- GET /api/words
+
+    - Request:
+```{
+  "group_id": 1,
+  "study_activity_id": 1
+}
+```
+    - Response:
+```{
+  "id": 1,
+  "group_id": 1,
+  "study_activity_id": 1,
+  "created_at": "2025-02-13T12:00:00Z"
+}
+```
+
+#### GET /api/words
     - pagination with 100 items per page
-- GET /api/groups
+```{
+  "words": [
+    {
+      "id": 1,
+      "bengali": "শব্দ",
+      "pronounciation": "shobdo",
+      "english": "word",
+      "parts": {}
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "items_per_page": 100
+  }
+}
+```
+#### GET /api/groups
     - pagination with 100 items per page
-- GET /api/groups/:id
-- GET /api/groups/:id/words
-- GET /api/groups/:id/study_sessions
-- GET /api/study_sessions
-- GET /api/study_sessions/:id
-- GET /api/study_sessions/:id/words
-- POST /api/reset_history
-- POST /api/full_reset
-- POST /api/study_sessions/:study_session_id/words/:word_id/review
+```{
+  "groups": [
+    {
+      "id": 1,
+      "name": "Basic Vocabulary"
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 1,
+    "items_per_page": 100
+  }
+}
+```
+- #### GET /api/groups/:id
+
+```{
+  "id": 1,
+  "name": "Basic Vocabulary"
+}
+```
+- #### GET /api/groups/:id/words
+
+```{
+  "words": [
+    {
+      "id": 1,
+      "bengali": "শব্দ",
+      "pronounciation": "shobdo",
+      "english": "word",
+      "parts": {}
+    }
+  ]
+}
+```
+- #### GET /api/groups/:id/study_sessions
+
+```{
+  "study_sessions": [
+    {
+      "id": 1,
+      "group_id": 1,
+      "study_activity_id": 1,
+      "created_at": "2025-02-13T12:00:00Z"
+    }
+  ]
+}
+```
+
+- #### GET /api/study_sessions
+
+```{
+  "study_sessions": [
+    {
+      "id": 1,
+      "group_id": 1,
+      "study_activity_id": 1,
+      "created_at": "2025-02-13T12:00:00Z"
+    }
+  ]
+}
+```
+-  #### GET /api/study_sessions/:id
+
+```{
+  "id": 1,
+  "group_id": 1,
+  "study_activity_id": 1,
+  "created_at": "2025-02-13T12:00:00Z"
+}
+```
+- #### GET /api/study_sessions/:id/words
+
+```{
+  "words": [
+    {
+      "word_id": 1,
+      "bengali": "শব্দ",
+      "pronounciation": "shobdo",
+      "english": "word",
+      "parts": {}
+    }
+  ]
+}
+```
+- #### POST /api/reset_history
+
+```{
+  "status": "success",
+  "message": "History reset successfully"
+}
+```
+- #### POST /api/full_reset
+
+```{
+  "status": "success",
+  "message": "Full reset successfully"
+}
+```
+- #### POST /api/study_sessions/:study_session_id/words/:word_id/review
     - required params: correct
+  
+    - Request:
+```{
+  "correct": true
+}
+```
+    - Response:
+```{
+  "status": "success",
+  "message": "Review recorded successfully"
+}
+```
 
+## Maven Tasks
 
+maven is a build automation tool used primarily for Java projects. It is used to build and manage any Java-based project. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages.
+Let's list out possiblre tasks we need for our language learning portal:
+### Initialize Database
 
+This task will initialize the sqlite database called `words.db`.
+
+### Migrate Database
+
+This tasks will run a series of migrations sql file on the database.
+
+Migrations live in the `migrations` folder.
+The migrarion files should be run in order.
+the file name should be in the format 
+```sql
+0001_init.sql
+0002_create_words_table.sql
+``` 
+### Seed Database
+This task will import json files and transform them into target data and insert into the database.
+
+All seed files live in the `seeds` folder.
+All seed files should be loaded.
+
+In our task we should have DSL to define the seed files and the target table.
+
+```json
+{
+  "words": [
+    {
+      "bengali": "শব্দ",
+      "pronounciation": "shobdo",
+      "english": "word",
+    },
+    ...
+  ]
+}
+```
