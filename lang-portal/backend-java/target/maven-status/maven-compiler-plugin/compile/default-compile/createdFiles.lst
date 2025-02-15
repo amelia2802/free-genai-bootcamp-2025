@@ -2,8 +2,10 @@ com\langportal\repository\WordRepository.class
 com\langportal\service\StudyActivityService.class
 com\langportal\model\StudyActivity.class
 com\langportal\model\Word.class
+com\langportal\config\WebConfig.class
 com\langportal\repository\StudyActivityRepository.class
 com\langportal\controller\StudyActivityController.class
+com\langportal\config\WebConfig$1.class
 com\langportal\service\WordService.class
 com\langportal\config\SQLiteDialect.class
 com\langportal\controller\WordController.class

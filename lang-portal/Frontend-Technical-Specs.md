@@ -1,11 +1,15 @@
 ## Frontend Technical Spec
 
+## Directory Structure
+
+
 ## Pages
 
 ### Dashboard `/dashboard`
 
 #### Purposes
 The purpose of this page is to provide a summary of the learning and act as the default page when a user visit the webpage 
+
 
 #### Components
 
