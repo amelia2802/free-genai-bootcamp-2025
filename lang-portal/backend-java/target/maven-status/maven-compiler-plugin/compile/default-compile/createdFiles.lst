@@ -1,0 +1,6 @@
+com\langportal\repository\WordRepository.class
+com\langportal\service\WordService.class
+com\langportal\config\SQLiteDialect.class
+com\langportal\controller\WordController.class
+com\langportal\model\Word.class
+com\langportal\LangPortalApplication.class

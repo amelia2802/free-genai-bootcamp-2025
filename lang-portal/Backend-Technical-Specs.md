@@ -11,10 +11,47 @@ A language learning school wants to build a prototype of learning portal which w
 
 - The backend will be built using Java
 - The database will be SQLLite3
+- Maven is the task runner
 - The API will be built using  Spring Boot
 - The API will always return JSON responses
 - No authentication or authorization
 - Everything will be treated as Single user.
+
+## Directory Structure
+
+```text
+backend-java/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── langportal/
+│   │   │           ├── controller/
+│   │   │           │   └── WordController.java
+│   │   │           ├── service/
+│   │   │           │   └── WordService.java
+│   │   │           ├── repository/
+│   │   │           │   └── WordRepository.java
+│   │   │           ├── model/
+│   │   │           │   └── Word.java
+│   │   │           └── LangPortalApplication.java
+│   │   ├── resources/
+│   │   │   ├── application.properties
+│   │   │   └── db/
+│   │   │       ├── words.db
+│   │   │       ├── migrations/
+│   │   │       │   ├── 0001_init.sql
+│   │   │       │   └── 0002_create_words_table.sql
+│   │   │       └── seeds/
+│   │   │           └── words.json
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── langportal/
+│                   └── LangPortalApplicationTests.java
+├── pom.xml
+└── README.md;
+```
 
 ## Database Schema
 Our database will be single sqlite database called `words.db` that will be in the root of the project folder of `backend-java`.
