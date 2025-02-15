@@ -26,6 +26,7 @@ backend-java/
 │   │   ├── java/
 │   │   │   └── com/
 │   │   │       └── langportal/
+│   │   │           ├── config/
 │   │   │           ├── controller/
 │   │   │           │   └── WordController.java
 │   │   │           ├── service/
@@ -48,6 +49,7 @@ backend-java/
 │       └── java/
 │           └── com/
 │               └── langportal/
+│                   ├── controller/
 │                   └── LangPortalApplicationTests.java
 ├── pom.xml
 └── README.md;
@@ -355,12 +357,14 @@ We have the following tables:
     - required params: correct
   
     - Request:
-```{
+```json
+{
   "correct": true
 }
 ```
     - Response:
-```{
+```json
+{
   "status": "success",
   "message": "Review recorded successfully"
 }
@@ -404,4 +408,12 @@ In our task we should have DSL to define the seed files and the target table.
     ...
   ]
 }
+```
+## Running Maven
+
+To run the maven tasks, you can run the following commands:
+
+```bash
+mvn clean install
+mvn spring-boot:run
 ```
