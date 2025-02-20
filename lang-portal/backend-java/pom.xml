@@ -39,6 +39,17 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+    </dependency>
+    <!-- Add LLM API client library -->
+    <dependency>
+    <groupId>com.theokanning.openai-gpt3-java</groupId>
+    <artifactId>service</artifactId>
+    <version>0.14.0</version>
+</dependency>
+
     </dependencies>
 
     <build>

@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.langportal.LangPortalApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.78 s - in com.langportal.LangPortalApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.347 s <<< FAILURE! - in com.langportal.LangPortalApplicationTests
+contextLoads  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'vocabularyGenerator' defined in com.langportal.LangPortalApplication: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=langPortalApplication; factoryMethodName=vocabularyGenerator; initMethodName=null; destroyMethodName=(inferred); defined in com.langportal.LangPortalApplication] for bean 'vocabularyGenerator': There is already [Generic bean: class [com.langportal.VocabularyGenerator]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\target\classes\com\langportal\VocabularyGenerator.class]] bound.
+

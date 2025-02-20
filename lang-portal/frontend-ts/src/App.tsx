@@ -1,58 +1,41 @@
-import React, { useEffect, useState } from 'react';
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter } from "react-router-dom";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { ThemeProvider } from "next-themes";
-import AppRoutes from "./routes";
-import { fetchData } from './apiService';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import StudyActivities from "./pages/StudyActivities";
+import Words from "./pages/Words";
+import Groups from "./pages/Groups";
+import StudySessions from "./pages/StudySessions";
+import Settings from "./pages/Settings";
+import NotFound from "./pages/NotFound";
+import Layout from "./components/Layout";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 1,
-      refetchOnWindowFocus: false,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
-const App = () => {
-  const [data, setData] = useState<any>(null);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const result = await fetchData('/words');
-        setData(result);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    getData();
-  }, []);
-
-  return (
-    <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TooltipProvider>
-            <SidebarProvider>
-              <Toaster />
-              <Sonner />
-              <AppRoutes />
-              <div className="data-container">
-                <h1>Data from Backend</h1>
-                {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <p>Loading...</p>}
-              </div>
-            </SidebarProvider>
-          </TooltipProvider>
-        </ThemeProvider>
-      </QueryClientProvider>
-    </BrowserRouter>
-  );
-};
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="study-activities" element={<StudyActivities />} />
+            <Route path="words" element={<Words />} />
+            <Route path="groups" element={<Groups />} />
+            <Route path="study-sessions" element={<StudySessions />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;

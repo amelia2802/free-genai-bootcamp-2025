@@ -1,6 +1,5 @@
 
 import type { Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   darkMode: ["class"],
@@ -27,20 +26,12 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#6366F1",
+          DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#E2E8F0",
+          DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-        },
-        success: {
-          DEFAULT: "#10B981",
-          foreground: "#FFFFFF",
-        },
-        warning: {
-          DEFAULT: "#F59E0B",
-          foreground: "#FFFFFF",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -63,8 +54,10 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      fontFamily: {
-        sans: ["Inter", ...fontFamily.sans],
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
         "accordion-down": {
@@ -75,20 +68,15 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        fadeIn: {
+        "fade-in": {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        slideIn: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        fadeIn: "fadeIn 0.3s ease-out",
-        slideIn: "slideIn 0.3s ease-out",
+        "fade-in": "fade-in 0.3s ease-out",
       },
     },
   },
