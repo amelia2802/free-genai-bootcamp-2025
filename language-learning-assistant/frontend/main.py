@@ -8,6 +8,7 @@ import re
 import requests
 
 from backend.get_transcript import YouTubeTranscriptDownloader
+from backend.structured_data import BengaliQuestionExtractor, ListeningQuestion
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
@@ -50,6 +51,8 @@ if 'transcript' not in st.session_state:
     st.session_state.transcript = None
 if 'messages' not in st.session_state:
     st.session_state.messages = []
+if 'generated_questions' not in st.session_state:
+    st.session_state.generated_questions = []
 
 def render_header():
     """Render the header section"""
@@ -164,6 +167,12 @@ def render_chat_stage():
                 process_message(q)
                 st.rerun()
 
+    # Display previously generated questions
+    if st.session_state.generated_questions:
+        st.markdown("### Previously Generated Questions")
+        for question in st.session_state.generated_questions:
+            st.markdown(f"- {question}")
+
     # Add a clear chat button
     if st.session_state.messages:
         if st.button("Clear Chat", type="primary"):
@@ -183,6 +192,7 @@ def process_message(message: str):
         if response:
             st.markdown(response)
             st.session_state.messages.append({"role": "assistant", "content": response})
+            st.session_state.generated_questions.append(message)
 
 def count_characters(transcript_data):
     """Count Bangla and total characters in transcript"""
@@ -276,6 +286,7 @@ def render_transcript_stage():
                 st.metric("Total Duration (seconds)", f"{total_duration:.1f}")
         else:
             st.info("Load a transcript to see statistics")
+
 def render_structured_stage():
     """Render the structured data stage"""
     st.header("Structured Data Processing")
@@ -284,7 +295,43 @@ def render_structured_stage():
     
     with col1:
         st.subheader("Dialogue Extraction")
-        st.info("Dialogue extraction will be implemented here")
+        
+        # File uploader for transcript
+        uploaded_file = st.file_uploader("Upload Transcript File", type=["txt"])
+        
+        if uploaded_file:
+            # Read transcript from uploaded file
+            transcript = uploaded_file.read().decode("utf-8").splitlines()
+            transcript = [{'text': line} for line in transcript if line.strip()]
+            
+            # Initialize extractor
+            extractor = BengaliQuestionExtractor()
+            
+            # Extract questions
+            questions = extractor.extract_questions(transcript)
+            
+            if questions:
+                st.success(f"Extracted {len(questions)} questions")
+                
+                # Display extracted questions
+                for q in questions:
+                    st.markdown(f"**Question {q.order}**")
+                    st.markdown(f"**Introduction:** {q.introduction}")
+                    st.markdown(f"**Conversation:** {q.conversation}")
+                    st.markdown(f"**Question:** {q.question}")
+                    st.markdown("---")
+                
+                # Save structured data
+                if st.button("Save Structured Data"):
+                    output_filename = f"structured_{uploaded_file.name}"
+                    if extractor.save_structured_data(questions, output_filename):
+                        st.success(f"Structured data saved to {output_filename}")
+                    else:
+                        st.error("Failed to save structured data")
+            else:
+                st.error("No questions extracted from the transcript")
+        else:
+            st.info("Upload a transcript file to extract questions")
         
     with col2:
         st.subheader("Data Structure")
