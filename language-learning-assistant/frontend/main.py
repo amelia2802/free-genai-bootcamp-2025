@@ -7,9 +7,11 @@ from collections import Counter
 import re
 import requests
 
-from backend.get_transcript import YouTubeTranscriptDownloader
-from backend.structured_data import BengaliQuestionExtractor, ListeningQuestion
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+# Add the backend folder to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "backend")))
+
+from get_transcript import YouTubeTranscriptDownloader
+from structured_data import BengaliQuestionExtractor, ListeningQuestion
 
 
 class OllamaChat:
