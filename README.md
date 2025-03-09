@@ -6,7 +6,9 @@ This repository contains my assignment submissions for the **GenAI Bootcamp 2025
 ## Table of Contents
 - [Sentence Constructor](#sentence-constructor)
 - [GenAI Architecting](#genai-architecting)
-
+- [Language Portal](#language-portal)
+- [Language Learning Asiistant](#language-learning-assistant)
+- [OPEA Configuration](#opea-configuration)
 ## Sentence Constructor
 Path: [`sentence-constructor/`](sentence-constructor/)
 
@@ -16,6 +18,18 @@ This section includes my implementation to create a GenAI-powered assistant that
 Path: [`genai-architecting/`](genai-architecting/)
 
 This folder contains assignments related to the architectural diagrams to explain to the stakeholders how GenAI assistants work to help construct sentences from English user input to Bengali sentences as output.
+
+## Language Portal
+Path: [`language-portal/`](lang-portal/)
+This section includes my implementation to create a GenAI-powered assistant that helps users translate English sentences into Bengali (IN)
+
+## Language Learning Assistant
+Path: [`language-learning-assistant/`](language-learning-assistant/)
+This section includes my implementation to create a GenAI-powered assistant that helps users translate English sentences into Bengali (IN)
+
+## OPEA Configuration
+Path: [`OPEA-config/`](OPEA-config/)
+This section includes expanding knowledge and construct a Mega-service by integrating various components such as TTS services.
 
 ## How to Use
 1. Clone this repository:
