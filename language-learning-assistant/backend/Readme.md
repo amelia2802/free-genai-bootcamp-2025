@@ -21,6 +21,11 @@ The `get_transcript.py` module enables downloading and processing YouTube video 
 
 ---
 
+| Chat    | Transcript |
+| -------- | ------- |
+| ![Screenshot 2025-04-12 040810](https://github.com/user-attachments/assets/00de2b25-3054-4dd0-9949-488ef2f61d12)  | ## Screenshot![Screenshot 2025-04-12 041101](https://github.com/user-attachments/assets/db38e2b0-1a5d-47cb-8b5b-1fd9e727b434)    |
+
+
 ## Installation
 
 ### Prerequisites
