@@ -9,6 +9,7 @@ This repository contains my assignment submissions for the **GenAI Bootcamp 2025
 - [Language Portal](#language-portal)
 - [Language Learning Asiistant](#language-learning-assistant)
 - [OPEA Configuration](#opea-configuration)
+- [PartyRock Language Learning Assistant](https://partyrock.aws/u/amelia-d/VwWKwEbnL/Bengali-Buddy%3A-Language-Learning-Companion)
 ## Sentence Constructor
 Path: [`sentence-constructor/`](sentence-constructor/)
 

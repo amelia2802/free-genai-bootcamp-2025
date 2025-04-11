@@ -43,7 +43,7 @@ class OllamaChat:
 
 # Page config
 st.set_page_config(
-    page_title="Bangla(IN) Learning Assistant",
+    page_title="Bengali(IN) Learning Assistant",
     page_icon="✒️",
     layout="wide"
 )
@@ -58,9 +58,9 @@ if 'generated_questions' not in st.session_state:
 
 def render_header():
     """Render the header section"""
-    st.title("✒️ Bangla Learning Assistant")
+    st.title("✒️ Bengali Learning Assistant")
     st.markdown("""
-    Transform YouTube transcripts into interactive Bangla(IN) learning experiences.
+    Transform YouTube transcripts into interactive Bengali(IN) learning experiences.
     
     This tool demonstrates:
     - Base LLM Capabilities using Ollama
@@ -88,7 +88,7 @@ def render_sidebar():
         stage_info = {
             "1. Chat with Ollama": """
             **Current Focus:**
-            - Basic Bangla learning
+            - Basic Bengali learning
             - Understanding LLM capabilities
             - Identifying limitations
             """,
@@ -137,7 +137,7 @@ def render_chat_stage():
 
     # Introduction text
     st.markdown("""
-    Start by exploring Ollama's Bangla(IN) language capabilities. Try asking questions about Bangla grammar, 
+    Start by exploring Ollama's Bengali(IN) language capabilities. Try asking questions about Bengali grammar, 
     vocabulary, or cultural aspects.
     """)
 
@@ -147,7 +147,7 @@ def render_chat_stage():
             st.markdown(message["content"])
 
     # Chat input area
-    if prompt := st.chat_input("Ask about Bangla(IN) language..."):
+    if prompt := st.chat_input("Ask about Bengali(IN) language..."):
         # Process the user input
         process_message(prompt)
 
@@ -155,10 +155,10 @@ def render_chat_stage():
     with st.sidebar:
         st.markdown("### Try These Examples")
         example_questions = [
-            "How do I say 'Where is the train station?' in Bangla?",
+            "How do I say 'Where is the train station?' in Bengali?",
             "Explain the difference between প্রতিশব্দ and জব্দ",
             "What's the polite form of স্বাগত?",
-            "How do I count objects in Bangla?",
+            "How do I count objects in Bengali?",
             "What's the difference between প্রশ্ন and উত্তর ?",
             "How do I ask for directions politely?"
         ]
@@ -197,12 +197,12 @@ def process_message(message: str):
             st.session_state.generated_questions.append(message)
 
 def count_characters(transcript_data):
-    """Count Bangla and total characters in transcript"""
+    """Count Bengali and total characters in transcript"""
     if not transcript_data:
         return 0, 0
         
-    def is_Bangla(char):
-        return '\u0980' <= char <= '\u09FF'  # Bangla
+    def is_Bengali(char):
+        return '\u0980' <= char <= '\u09FF'  # Bengali
     
     # If transcript_data is a list of dicts, extract text
     if isinstance(transcript_data, list):
@@ -210,7 +210,7 @@ def count_characters(transcript_data):
     else:
         text = str(transcript_data)
     
-    bn_chars = sum(1 for char in text if is_Bangla(char))
+    bn_chars = sum(1 for char in text if is_Bengali(char))
     return bn_chars, len(text)
 
 def format_transcript_for_display(transcript_data):
@@ -228,7 +228,7 @@ def render_transcript_stage():
     # URL input
     url = st.text_input(
         "YouTube URL",
-        placeholder="Enter a Bangla lesson YouTube URL"
+        placeholder="Enter a Bengali lesson YouTube URL"
     )
     
     # Download button and processing
@@ -279,7 +279,7 @@ def render_transcript_stage():
             
             # Display stats
             st.metric("Total Characters", total_chars)
-            st.metric("Bangla Characters", bn_chars)
+            st.metric("Bengali Characters", bn_chars)
             st.metric("Total Lines", total_lines)
             
             # Display additional transcript information
@@ -346,7 +346,7 @@ def render_rag_stage():
     # Query input
     query = st.text_input(
         "Test Query",
-        placeholder="Enter a question about Bangla..."
+        placeholder="Enter a question about Bengali..."
     )
     
     col1, col2 = st.columns(2)

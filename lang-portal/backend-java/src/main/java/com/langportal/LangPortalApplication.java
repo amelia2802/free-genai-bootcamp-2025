@@ -11,7 +11,7 @@ public class LangPortalApplication {
         SpringApplication.run(LangPortalApplication.class, args);
     }
     
-    @Bean
+    @Bean(name = "customVocabularyGenerator")
     public VocabularyGenerator vocabularyGenerator() {
         return new VocabularyGenerator();
     }

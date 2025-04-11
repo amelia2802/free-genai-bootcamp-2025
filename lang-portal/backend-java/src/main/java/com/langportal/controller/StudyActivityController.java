@@ -1,37 +1,27 @@
 package com.langportal.controller;
 
-import java.util.List;
-
+import com.langportal.service.OpenAIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.langportal.model.StudyActivity;
-import com.langportal.service.StudyActivityService;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/api/study_activities")
+@RequestMapping("/api/study-activities")
 public class StudyActivityController {
 
     @Autowired
-    private StudyActivityService studyActivityService;
+    private OpenAIService openAIService;
 
-    @GetMapping
-    public List<StudyActivity> getAllStudyActivities() {
-        return studyActivityService.getAllStudyActivities();
-    }
+    @GetMapping("/vocabulary-quiz")
+    public Map<String, Object> getVocabularyQuiz() {
+        // Get the user's language preferences and level (hardcoded for now)
+        String language = "Bengali"; // Replace with dynamic user preference
+        String level = "Beginner"; // Replace with dynamic user level
 
-    @GetMapping("/{id}")
-    public StudyActivity getStudyActivityById(@PathVariable Long id) {
-        return studyActivityService.getStudyActivityById(id);
-    }
-
-    @PostMapping
-    public StudyActivity createStudyActivity(@RequestBody StudyActivity studyActivity) {
-        return studyActivityService.createStudyActivity(studyActivity);
+        // Generate a vocabulary quiz using OpenAI API
+        return openAIService.generateVocabularyQuiz(language, level);
     }
 }

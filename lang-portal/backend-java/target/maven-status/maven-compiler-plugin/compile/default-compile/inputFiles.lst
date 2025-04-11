@@ -2,6 +2,8 @@ C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\ma
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\model\Vocabulary.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\controller\StudyActivityController.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\model\StudyActivity.java
+C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\model\VocabularyQuiz.java
+C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\service\OpenAIService.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\service\VocabularyService.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\config\SQLiteDialect.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\LangPortalApplication.java
@@ -10,7 +12,10 @@ C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\ma
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\controller\VocabularyController.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\repository\VocabularyRepository.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\repository\WordRepository.java
+C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\service\VocabImporterService.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\repository\StudyActivityRepository.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\service\StudyActivityService.java
+C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\model\Question.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\service\WordService.java
 C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\util\JsonUtil.java
+C:\Users\ameli\projects\free-genai-bootcamp-2025\lang-portal\backend-java\src\main\java\com\langportal\controller\VocabController.java

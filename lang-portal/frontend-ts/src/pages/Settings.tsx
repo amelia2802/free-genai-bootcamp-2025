@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -14,15 +13,31 @@ import {
 } from "@/components/ui/alert-dialog";
 import { useToast } from "@/components/ui/use-toast";
 import { Moon, Sun, Trash2, RotateCcw } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Settings() {
   const { toast } = useToast();
 
-  const handleThemeChange = (theme: string) => {
-    // Theme implementation will be added later
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.remove("dark", "light");
+    document.documentElement.classList.add(theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleThemeChange = (newTheme: string) => {
+    setTheme(newTheme);
     toast({
       title: "Theme Changed",
-      description: `Theme has been changed to ${theme}`,
+      description: `Theme has been changed to ${newTheme}`,
     });
   };
 

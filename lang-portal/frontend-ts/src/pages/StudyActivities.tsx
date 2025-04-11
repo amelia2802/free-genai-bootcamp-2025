@@ -1,9 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowRight, BookOpen, BrainCircuit, Gamepad2, ScrollText } from "lucide-react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 // Mock data until backend is ready
 const mockActivities = [
@@ -43,6 +43,22 @@ export default function StudyActivities() {
     queryFn: () => Promise.resolve(mockActivities),
   });
 
+  const { data: quizData, isLoading, isError } = useQuery({
+    queryKey: ["vocabularyQuiz"],
+    queryFn: async () => {
+      const response = await axios.get('/api/study-activities/vocabulary-quiz');
+      return response.data;
+    },
+  });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error loading quiz data</div>;
+  }
+
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       <header className="flex items-center justify-between">
@@ -67,12 +83,31 @@ export default function StudyActivities() {
               <p className="text-muted-foreground">{activity.description}</p>
             </CardContent>
             <CardFooter className="flex gap-4">
-              <Button asChild className="flex-1">
-                <Link to={`${activity.id}/launch`}>
-                  Launch
-                  <ArrowRight size={16} className="ml-2" />
-                </Link>
-              </Button>
+              {activity.id === 1 && (
+                <Button asChild className="flex-1">
+                  <div>
+                    <Link to={activity.launchUrl}>
+                      Launch
+                      <ArrowRight size={16} className="ml-2" />
+                    </Link>
+                    {quizData && quizData.questions && (
+                      <div>
+                        {quizData.questions.map((question, index) => (
+                          <div key={index}>
+                            <p>{question.prompt}</p>
+                            <ul>
+                              {question.options.map((option, index) => (
+                                <li key={index}>{option}</li>
+                              ))}
+                            </ul>
+                            <p>Answer: {question.answer}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </Button>
+              )}
               <Button asChild variant="outline" className="flex-1">
                 <Link to={`${activity.id}`}>View Details</Link>
               </Button>

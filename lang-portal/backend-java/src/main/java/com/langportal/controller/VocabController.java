@@ -1,4 +1,4 @@
-package com.langportal.controller;
+/*package com.langportal.controller;
 
 import com.langportal.service.OpenAIService;
 import com.langportal.service.VocabImporterService;
@@ -21,11 +21,11 @@ public class VocabController {
 
     @GetMapping("/generate")
     public String generateVocab(@RequestParam String prompt) {
-        return openAIService.generateVocab(prompt);
+        return openAIService.generateVocabularyQuiz(prompt);
     }
 
     @PostMapping("/import")
     public String importVocab(@RequestParam String source) {
         return vocabImporterService.importVocab(source);
     }
-}
+}*/
