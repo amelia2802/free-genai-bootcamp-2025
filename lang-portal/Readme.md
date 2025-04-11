@@ -36,6 +36,17 @@ I am currently using a free OpenAI account for this project. Unfortunately, I ha
 
 ## Screenshots
 Screenshots of both the frontend and backend are available to provide a visual representation of the application.
+| Frontend    | Backend |
+| -------- | ------- |
+| ![Screenshot 2025-04-12 012536](https://github.com/user-attachments/assets/fbd525d2-f13b-4643-813d-a33b68cb0ed0)  | ![Screenshot 2025-04-12 025728](https://github.com/user-attachments/assets/9cbfd025-566a-4bf7-b8aa-bc3c23b04c73)  |
+| ![Screenshot 2025-04-12 012559](https://github.com/user-attachments/assets/e1285437-c6ee-4518-a167-eb97b931a211) |    |
+| ![Screenshot 2025-04-12 012624](https://github.com/user-attachments/assets/35c11071-160d-4d08-b84c-461f5ef55496)   |  |
+
+
+
+
+
+
 
 ## Future Plans
 - Upgrade to a paid OpenAI account to continue testing and improving the application.
